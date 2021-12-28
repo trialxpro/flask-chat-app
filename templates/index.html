@@ -6,10 +6,18 @@
 </head>
 <body>
 <h1>My Chat App</h1>
-<h3>Hi {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Guest{% endif %}!</h3>
+<h3>Hi {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Guest
+    
+    <a href="/login"Login Pls</a>
+    <a href="/signup">Create Account</a>
+
+    
+    {% endif %}!</h3>
 
 {% if current_user.is_authenticated %}
     <h3>My rooms</h3>
+    <a href="/createroom"">Create Room</a>
+    <a href="/editroom">Edit Room</a>                      
     <ul>
         {% for room in rooms %}
             <li><a href="/rooms/{{ room._id.room_id }}">{{ room.room_name }}</a></li>
