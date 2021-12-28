@@ -17,7 +17,8 @@
 {% if current_user.is_authenticated %}
     <h3>My rooms</h3>
     <a href="/createroom"">Create Room</a>
-    <a href="/editroom">Edit Room</a>                      
+    <a href="/editroom">Edit Room</a>
+    <a href="/visitroom">Visit Room</a>                  
     <ul>
         {% for room in rooms %}
             <li><a href="/rooms/{{ room._id.room_id }}">{{ room.room_name }}</a></li>
